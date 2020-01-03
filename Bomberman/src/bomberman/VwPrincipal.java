@@ -15,6 +15,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -65,6 +67,34 @@ public class VwPrincipal extends JFrame implements ActionListener{
 		this.setLocationRelativeTo(null);
 	}
 
+	//Devuelve la matriz binaria
+	public void MatrizBinaria(){
+		Runnable runnable = new Runnable() {
+			@Override
+			public void run(){
+				while(true){
+					// Esto se ejecuta en segundo plano, solo una vez
+					boolean[][] matriz = new boolean[filas][columnas];
+					for(int fila = 1 ; fila < filas; fila++){ //Iniciamos con fila, luego con la columna
+						for(int columna = 1 ; columna < columnas; columna++){
+							if(celda[fila][columna] .getIcon() != null)
+								matriz[fila][columna] = true;
+						}
+					}
+					try {
+						Thread.sleep(5);
+						//ENVIAR MATRIZ A METODO DE COMUNICACION
+					} catch (InterruptedException ex) {
+						Logger.getLogger(VwPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+					}
+				}
+			}
+		};
+		// Creamos un hilo y le pasamos el runnable
+		Thread hilo = new Thread(runnable);
+		hilo.start();
+	}
+	
 	public static void Pausar(){
 		 //JOptionPane.showMessageDialog(null, "Juego pausado, se ha guardado la info.");
 		
@@ -503,6 +533,7 @@ public class VwPrincipal extends JFrame implements ActionListener{
 						pnlCelda.add(celda[fila][columna]);
 					}
 				}
+				MatrizBinaria();
 			}
 		}catch(Exception ex){
 		}
