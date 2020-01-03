@@ -5,19 +5,36 @@
  */
 package bomberman;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JToolBar;
+
 /**
  *
  * @author Juan Carlos Aragón
  */
 public class Game extends javax.swing.JFrame {
-
+	public static Celda[][] celda;
+	public static int filas = 12, columnas = 12;
+	private JPanel  pnlCelda, pnl;
+	private JScrollPane scrollPane;
+	private JButton btnRpMenu, btnRpFunUsada, btnRpGraficas;
+	private JToolBar barraReportes;
+	private GridLayout layout, layoutEnd;
     /**
      * Creates new form Game
      */
     public Game() {
         initComponents();
+        CrearComponentes();
+        CrearMatriz();
     }
-
+	
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,7 +94,43 @@ public class Game extends javax.swing.JFrame {
             }
         });
     }
+	private void CrearComponentes(){
+		 layout = new GridLayout(0,4);
+        pnl = new JPanel();
+        pnl.setLayout(layout);
+		 barraReportes = new JToolBar();
+		 btnRpGraficas = new JButton(" | RP. GRAFICAS | ");
+        btnRpGraficas.setName(" | RP. GRAFICAS | ");
+        barraReportes.add(btnRpGraficas);
+        pnl.add(barraReportes);
+		
+		pnlCelda = new JPanel(null);
+		scrollPane = new JScrollPane(pnlCelda, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		this.add(scrollPane, BorderLayout.CENTER);
+		this.add(pnl, BorderLayout.PAGE_START);
+		this.setSize(700, 700);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	//Crear ambiente
+	private void CrearMatriz(){
+		celda = new Celda[filas][columnas]; //Se crea la matriz de labels
+		pnlCelda.setLayout(new GridLayout (filas,columnas)); //Le insertamos el estilo celda
+		pnlCelda.removeAll(); //Limpiamos el panel.		
+		celda = new Celda[filas][columnas]; //Se crea la matriz de labels
+		
+		for(int fila = 0 ; fila < filas; fila++){ //Iniciamos con fila, luego con la columna
+			for(int columna = 0 ; columna < columnas; columna++){
+				//celda[fila][columna] = new Celda((78 * columna),(35 * fila), 30, 15);
+				pnlCelda.setPreferredSize(new Dimension(30, 15));
+				pnlCelda.add(celda[fila][columna]);
 
+			}
+		}
+		pnlCelda.updateUI(); //Se actualiza el panel, para ver lo que agregamos.
+	}
+	
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

@@ -44,7 +44,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton1" max="32767" attributes="0"/>
+                          <Component id="jBtnIniciarSesion" max="32767" attributes="0"/>
                           <Component id="jButton2" min="-2" pref="244" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -69,7 +69,7 @@
                   <Component id="jTextField2" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="42" max="-2" attributes="0"/>
+              <Component id="jBtnIniciarSesion" min="-2" pref="42" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="jButton2" min="-2" pref="41" max="-2" attributes="0"/>
               <EmptySpace pref="125" max="32767" attributes="0"/>
@@ -119,10 +119,13 @@
         <Property name="text" type="java.lang.String" value="ORGA PROYECTO DICIEMBRE 2019"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jBtnIniciarSesion">
       <Properties>
         <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnIniciarSesionActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>

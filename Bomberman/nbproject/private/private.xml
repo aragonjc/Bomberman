@@ -3,20 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/User/User.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/Game.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/DeleteUser.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/UserTimes.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/Main.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/Registro.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/User.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/UserPoints.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/TopTime.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/Admin.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/UserList.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/UserRequest.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/TopScore.java</file>
-            <file>file:/C:/Users/Jose/Documents/NetBeansProjects/Bomberman/src/bomberman/GameMenu.java</file>
+            <file>file:/C:/bomberman/Bomberman/Bomberman/src/POJO/Jugador.java</file>
+            <file>file:/C:/bomberman/Bomberman/Bomberman/src/bomberman/Celda.java</file>
+            <file>file:/C:/bomberman/Bomberman/Bomberman/src/bomberman/Main.java</file>
+            <file>file:/C:/bomberman/Bomberman/Bomberman/src/bomberman/VwPrincipal.java</file>
         </group>
     </open-files>
 </project-private>
