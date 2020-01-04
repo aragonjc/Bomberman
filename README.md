@@ -15,7 +15,6 @@ La aplicación está desarrollada sobre la plataforma de JAVA, la cuál está id
 2. Abrir el proyecto desde NetBeans.
 3. Recompilarlo, ya que la librería pport puede darnos problemas.
 4. Agregar las librerías necesarias para la generación de reportes, se recomienda la librería itextpdf.
-5. Compilar el proyecto y aprovechar sus caracteristicas
 
 
 ### Pre-requisitos 📋
@@ -25,51 +24,12 @@ La aplicación está desarrollada sobre la plataforma de JAVA, la cuál está id
 4. Librería pport
 5. Librería Itextpdf
 
-### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
-
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
 
 ## Despliegue 📦
 
 _Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
-
-_Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * [NETBEANS 7.1](https://netbeans.org › downloads › 7.1/) - El framework web usado
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
