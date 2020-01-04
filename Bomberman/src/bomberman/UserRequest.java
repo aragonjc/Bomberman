@@ -5,6 +5,8 @@
  */
 package bomberman;
 
+import POJOMN.Usuario;
+
 /**
  *
  * @author Juan Carlos Aragón
@@ -16,6 +18,9 @@ public class UserRequest extends javax.swing.JFrame {
      */
     public UserRequest() {
         initComponents();
+	this.setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
+	actualizar();
+	
     }
 
     /**
@@ -27,22 +32,110 @@ public class UserRequest extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cbxUsuarios = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        btnAceptar = new javax.swing.JButton();
+        btnDeclinar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        cbxUsuarios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel1.setText("Usuarios");
+
+        btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
+
+        btnDeclinar.setText("Declinar");
+        btnDeclinar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeclinarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(108, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(35, 35, 35)
+                        .addComponent(cbxUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnAceptar)
+                        .addGap(86, 86, 86)
+                        .addComponent(btnDeclinar)))
+                .addGap(203, 203, 203))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbxUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAceptar)
+                    .addComponent(btnDeclinar))
+                .addContainerGap(201, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        // TODO add your handling code here: Borrar de solicitud y Insertar en registro
+	Archivo.getInstancia().setTipo(2); //Borrar y Insertar
+	
+	for(Usuario usu : Archivo.getInstancia().getLstUsuarios()){
+		if(usu.getUsuario().equals(cbxUsuarios.getSelectedItem().toString())){
+			Usuario.getInstancia().setUsuario(usu.getUsuario());
+			Usuario.getInstancia().setPass(usu.getPass());
+			Archivo.getInstancia().getLstUsuarios().remove(usu);
+			break;
+		}
+	}
+	
+	Archivo.getInstancia().quitar("solicitud//usuarios.solicitud");
+	Archivo.getInstancia().insertar("registro//usuarios.registro");
+	actualizar();
+    }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void btnDeclinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeclinarActionPerformed
+        // TODO add your handling code here:
+	for(Usuario usu : Archivo.getInstancia().getLstUsuarios()){
+		if(usu.getUsuario().equals(cbxUsuarios.getSelectedItem().toString())){
+			Usuario.getInstancia().setUsuario(usu.getUsuario());
+			Usuario.getInstancia().setPass(usu.getPass());
+			Archivo.getInstancia().getLstUsuarios().remove(usu);
+			break;
+		}
+	}
+	Archivo.getInstancia().quitar("solicitud//usuarios.solicitud");
+	actualizar();
+    }//GEN-LAST:event_btnDeclinarActionPerformed
+
+	private void actualizar(){
+		Archivo.getInstancia().setTipo(1);
+		Archivo.getInstancia().buscar("solicitud//usuarios.solicitud");
+		cbxUsuarios.removeAllItems();
+		int cont = 0;
+		for (Usuario usu : Archivo.getInstancia().getLstUsuarios()) {
+			cbxUsuarios.addItem(usu.getUsuario());
+			if(cont++ == 0){
+				cbxUsuarios.setSelectedItem(usu);
+			}
+		}
+		
+	}
     /**
      * @param args the command line arguments
      */
@@ -79,5 +172,9 @@ public class UserRequest extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnDeclinar;
+    private javax.swing.JComboBox<String> cbxUsuarios;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

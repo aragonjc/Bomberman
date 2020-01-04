@@ -5,6 +5,8 @@
  */
 package bomberman;
 
+import java.io.File;
+
 /**
  *
  * @author Juan Carlos Aragón
@@ -27,20 +29,20 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtPass = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jBtnIniciarSesion = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnRegistrarse = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
 
@@ -50,7 +52,7 @@ public class Main extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Contraseña:");
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("ORGA PROYECTO DICIEMBRE 2019");
@@ -62,10 +64,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Registrarse");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRegistrarseActionPerformed(evt);
             }
         });
 
@@ -85,13 +87,13 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtNombre)
+                            .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(252, 252, 252)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jBtnIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(236, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -101,36 +103,51 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75)
                 .addComponent(jBtnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+	Registro registro = new Registro();
+	registro.setVisible(true);
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     private void jBtnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIniciarSesionActionPerformed
         // TODO add your handling code here:
-	int tipo = 1; //tipo = 0 entreno, tipo = 1 carga
-	String archivo = "nivel1.bomb"; //nombre del archivo a subir
-	VwPrincipal principal = new VwPrincipal(tipo, archivo);
-	principal.setVisible(true);
+//	 //tipo = 0 entreno, tipo = 1 carga
+//	String archivo = "nivel1.bomb"; //nombre del archivo a subir
+//	VwPrincipal principal = new VwPrincipal(tipo, archivo);
+//	principal.setVisible(true);
+	String usuario = "ADMIN";
+	String pass = "ORGA_DIC_2019";
+
+	if(txtNombre.getText().toUpperCase().equals(usuario) && txtPass.getText().toUpperCase().equals(pass)){
+		Admin admvw = new Admin();
+		admvw.setVisible(true);
+		this.dispose();
+	}else{
+		User usrvw = new User();
+		usrvw.setVisible(true);
+		this.dispose();
+	}
+		
     }//GEN-LAST:event_jBtnIniciarSesionActionPerformed
 
     /**
@@ -162,19 +179,36 @@ public class Main extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main().setVisible(true);
+	public void run() {
+		File directorios = new File("C:////orga//solicitud");
+		if (!directorios.exists()) {
+			if (directorios.mkdirs()) {
+				System.out.println("Multiples directorios fueron creados");
+			} else {
+			System.out.println("Error al crear directorios");
+			}
+		}
+		
+		File directorios2 = new File("C:////orga//registro");
+		if (!directorios2.exists()) {
+			if (directorios2.mkdirs()) {
+				System.out.println("Multiples directorios fueron creados");
+			} else {
+			System.out.println("Error al crear directorios");
+			}
+		}
+		new Main().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistrarse;
     private javax.swing.JButton jBtnIniciarSesion;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtPass;
     // End of variables declaration//GEN-END:variables
 }
