@@ -19,12 +19,11 @@ La aplicación está desarrollada sobre la plataforma de JAVA, la cuál está id
 
 
 ### Pre-requisitos 📋
-
-_Que cosas necesitas para instalar el software y como instalarlas_
-
-```
-Da un ejemplo
-```
+1. Windows XP o mas reciente
+2. NeteBeans 7.1 o una versión mas reciente
+3. Java 6 (JDK 6)
+4. Librería pport
+5. Librería Itextpdf
 
 ### Instalación 🔧
 
