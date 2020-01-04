@@ -24,11 +24,6 @@ La aplicación está desarrollada sobre la plataforma de JAVA, la cuál está id
 4. Librería pport
 5. Librería Itextpdf
 
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
-
 ## Construido con 🛠️
 
 * [NETBEANS 7.1](https://netbeans.org › downloads › 7.1/) - El framework web usado
