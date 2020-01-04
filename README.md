@@ -11,9 +11,11 @@ La aplicación está desarrollada sobre la plataforma de JAVA, la cuál está id
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
+1. Descargar el proyecto.
+2. Abrir el proyecto desde NetBeans.
+3. Recompilarlo, ya que la librería pport puede darnos problemas.
+4. Agregar las librerías necesarias para la generación de reportes, se recomienda la librería itextpdf.
+5. Compilar el proyecto y aprovechar sus caracteristicas
 
 
 ### Pre-requisitos 📋
