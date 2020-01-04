@@ -1,7 +1,13 @@
 # Bomberman
-# Título del Proyecto
+ 
+Es una aplicación que está desarrollada para la simulación del juego a traves de una transmisión serial.
+Para la transmisión serial los bits son transmitidos secuencialmente sobre una linea. 
 
-_Acá va un párrafo que describa lo que es el proyecto_
+La transmisión serial es más lenta que la paralela puesto que se envía un bit a la vez. Una ventaja significativa de la transmisión serial en relación a la paralela es un menor costo del cableado puesto que se necesita un solo cable se tiene un octavo del costo que se ocuparía para transmisión paralela.
+Este ahorro en costo se vuelve más significativo conforme sean mayores las distancias requieridas para la comunicación.
+
+La aplicación está desarrollada sobre la plataforma de JAVA, la cuál está identificada según la funcionalidad de cada una de las clases. 
+
 
 ## Comenzando 🚀
 
