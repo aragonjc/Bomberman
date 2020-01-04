@@ -5,6 +5,7 @@
  */
 package bomberman;
 
+import POJOMN.Usuario;
 import java.io.File;
 
 /**
@@ -138,11 +139,17 @@ public class Main extends javax.swing.JFrame {
 	String usuario = "ADMIN";
 	String pass = "ORGA_DIC_2019";
 
+	Usuario.getInstancia().setUsuario(txtNombre.getText());
+	Usuario.getInstancia().setPass(txtPass.getText());
+	Archivo.getInstancia().setTipo(3);
+	
 	if(txtNombre.getText().toUpperCase().equals(usuario) && txtPass.getText().toUpperCase().equals(pass)){
 		Admin admvw = new Admin();
 		admvw.setVisible(true);
 		this.dispose();
-	}else{
+		
+	
+	}else if(Archivo.getInstancia().buscar("registro//usuarios.registro") ){
 		User usrvw = new User();
 		usrvw.setVisible(true);
 		this.dispose();

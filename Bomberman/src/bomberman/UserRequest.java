@@ -97,8 +97,8 @@ public class UserRequest extends javax.swing.JFrame {
 	
 	for(Usuario usu : Archivo.getInstancia().getLstUsuarios()){
 		if(usu.getUsuario().equals(cbxUsuarios.getSelectedItem().toString())){
-			Usuario.getInstancia().setUsuario(usu.getUsuario());
 			Usuario.getInstancia().setPass(usu.getPass());
+			Usuario.getInstancia().setUsuario(usu.getUsuario());
 			Archivo.getInstancia().getLstUsuarios().remove(usu);
 			break;
 		}

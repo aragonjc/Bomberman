@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 public class Archivo {
 	
-	private int tipo; //tipo = 0 buscar usuario repetido, tipo == 1 obtener usuarios, tipo = 2 borrar/insertar
+	private int tipo; //tipo = 0 buscar usuario repetido, tipo == 1 obtener usuarios, tipo = 2 borrar/insertar, tipo = 3 buscar usuario y pass
 	private static Archivo mnarchivo;
 	File archivo = null;
 	FileReader fr = null;
@@ -54,7 +54,10 @@ public class Archivo {
 		String[] arrOfStr = linea.split(","); 
 		switch(getTipo()){
 			case 0: //buscar nombre usuario
-				if(arrOfStr[getTipo()].toUpperCase().equals(Usuario.getInstancia().getUsuario().toUpperCase())) return true;
+				if(arrOfStr[0].toUpperCase().equals(Usuario.getInstancia().getUsuario().toUpperCase())) return true;
+			case 3: //buscar nombre usuario y pass
+				if(arrOfStr[0].toUpperCase().equals(Usuario.getInstancia().getUsuario().toUpperCase()) && 
+				arrOfStr[1].toUpperCase().equals(Usuario.getInstancia().getPass().toUpperCase())) return true;
 		}
 		return false;
 	}
@@ -93,6 +96,11 @@ public class Archivo {
 						case 1://obtener nombres
 							obtenerInfoUsuario(linea);
 							break;
+						case 3: //buscar nombre y pass
+							encontrado = buscarEnFila(linea);
+							if(encontrado)
+								break outer; 
+							else break;
 					}
 					
 					System.out.println(linea);
@@ -143,8 +151,23 @@ public class Archivo {
 			pw = new PrintWriter(fichero);
 			
 			if(obj instanceof Usuario){
-				if(Usuario.getInstancia().getUsuario() != null)
-					pw.println(Usuario.getInstancia().getUsuario()+ "," +Usuario.getInstancia().getPass());
+				
+				for(Usuario usu : Archivo.getInstancia().getLstUsuarios()){
+					pw.println(usu.getUsuario()+ "," +usu.getPass());
+				}
+				
+				if( Archivo.getInstancia().getLstUsuarios().size() < 1){ //si no hay usuarios borrar archivo para evitar nulls
+					File file = new File(path); 
+					if(file.delete()) 
+					{ 
+						System.out.println("File deleted successfully"); 
+					} 
+					else
+					{ 
+						System.out.println("Failed to delete the file"); 
+					} 
+				}
+					
 			}
 
 		} catch (Exception e) {
